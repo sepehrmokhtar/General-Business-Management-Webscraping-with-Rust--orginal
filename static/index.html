@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rust Web Scraper</title>
+    <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #121212; /* Black background */
+            color: #e0e0e0; /* Light gray text */
+        }
+        h1, h2, p {
+            margin: 10px 0;
+        }
+        a {
+            color: #64b5f6; /* Light blue for links */
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Header */
+        header {
+            background-color: #1e1e1e; /* Dark gray */
+            padding: 20px;
+            text-align: center;
+        }
+        header h1 {
+            color: #ffffff; /* White text */
+            font-size: 2.5em;
+        }
+
+        /* Main Content */
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #1e1e1e; /* Dark gray */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        main section {
+            margin-bottom: 20px;
+        }
+
+        /* Form */
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        form label {
+            margin-bottom: 5px;
+            font-size: 1.1em;
+            color: #bbbbbb;
+        }
+        form input[type="text"] {
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #333;
+            border-radius: 5px;
+            background-color: #2c2c2c; /* Gray input background */
+            color: #e0e0e0;
+        }
+        form button {
+            padding: 10px;
+            margin-bottom: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #64b5f6; /* Light blue */
+            color: #ffffff;
+            font-size: 1em;
+            cursor: pointer;
+        }
+        form button:hover {
+            background-color: #42a5f5; /* Slightly darker blue */
+        }
+
+        /* GitHub Button */
+        .github-btn {
+            text-align: center;
+            background-color: #424242; /* Dark gray button */
+            color: #e0e0e0; /* Light gray text */
+            padding: 10px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1em;
+            cursor: pointer;
+            display: inline-block;
+        }
+        .github-btn:hover {
+            background-color: #616161; /* Slightly lighter gray */
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #1e1e1e;
+            color: #bbbbbb;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Rust Web Scraper</h1>
+    </header>
+    <main>
+        <section>
+            <h2>What is Web Scraping?</h2>
+            <p>
+                Web scraping is a technique used to extract data from websites. By analyzing the structure of a webpage, 
+                a scraper program can collect specific elements such as text, images, or metadata. This technique is 
+                commonly used in fields like data analysis, research, and automation.
+            </p>
+        </section>
+        <section>
+            <h2>About This Project</h2>
+            <p>
+                This Rust-based web scraper allows users to extract paragraph elements (<code>&lt;p&gt;</code>) 
+                from a given URL. The project demonstrates the power of Rust's concurrency and performance for building 
+                efficient and robust web scraping tools. Simply enter the URL of the webpage you want to scrape, and the 
+                extracted content will be saved to a file for further analysis.
+            </p>
+        </section>
+        <section>
+            <h2>Try It Out</h2>
+            <form action="/scrape" method="post">
+                <label for="url">Enter the URL to scrape:</label>
+                <input type="text" id="url" name="url" placeholder="https://example.com" required>
+                <button type="submit">Scrape</button>
+            </form>
+            <a href="https://github.com/sepehrmokhtar/Information-System" class="github-btn" target="_blank">
+                Or Download from GitHub
+            </a>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Rust Web Scraper. All rights reserved.</p>
+    </footer>
+</body>
+</html>
