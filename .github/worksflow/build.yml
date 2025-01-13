@@ -1,0 +1,34 @@
+name: Build Rust Binary
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Install Rust
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+          target: aarch64-unknown-linux-gnu
+          override: true
+
+      - name: Install cross
+        run: cargo install cross
+
+      - name: Build for aarch64
+        run: cross build --release --target aarch64-unknown-linux-gnu
+
+      - name: Upload aarch64 Binary
+        uses: actions/upload-artifact@v3
+        with:
+          name: aarch64-binary
+          path: target/aarch64-unknown-linux-gnu/release/your_project_name
