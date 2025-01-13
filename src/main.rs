@@ -16,13 +16,13 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     // Parse the HTML
     let document = Html::parse_document(&response);
 
-    // Define a selector for `<p>` tags
+    // Define a selector for <p> tags
     let selector = Selector::parse("p").unwrap();
 
     // Create or overwrite a text file
     let mut file = File::create("paragraphs.txt")?;
 
-    // Iterate over all `<p>` elements, write their text content to the file
+    // Iterate over all <p> elements, write their text content to the file
     for element in document.select(&selector) {
         let text = element.text().collect::<Vec<_>>().join(" ");
         writeln!(file, "{}", text)?; // Write to file with a newline
